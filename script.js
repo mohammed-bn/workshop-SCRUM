@@ -54,14 +54,12 @@ function updateCollaboratorsList() {
  * - Mettre à jour le select avec innerHTML
  */
 function updateAssigneeSelect() {
-  function updateAssigneeSelect() {
-    const assigne = document.getElementById("storyAssignee");
-    collaborators.forEach((element) => {
-      const optionn = document.createElement("option");
-      assigne.appendChild(optionn);
-      optionn.innerHTML = element;
-    });
-  }
+  const assigne = document.getElementById("storyAssignee");
+  collaborators.forEach((element) => {
+    const optionn = document.createElement("option");
+    assigne.appendChild(optionn);
+    optionn.innerHTML = element;
+  });
 }
 
 /**
