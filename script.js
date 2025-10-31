@@ -61,15 +61,14 @@ function updateAssigneeSelect() {
     optionn.innerHTML = element;
   });
 }
-
+updateAssigneeSelect();
 /**
- * Fonction pour créer une nouvelle User Storyg
+ * Fonction pour créer une nouvelle User Story
  * TODO:
  * - Récupérer les valeurs des champs: storyTitle, storyDescription, storySprint, storyAssignee
  * - Vérifier que le titre et la description ne sont pas vides
  * - Créer un objet story avec: id (utiliser storyIdCounter++), title, description, sprint (parseInt), assignee, status: 'backlog'
- * - Ajouter la story au tableau 'userStories' * TODO: 
-
+ * - Ajouter la story au tableau 'userStories'
  * - Vider les champs titre et description
  * - Appeler renderSprintBacklog() pour actualiser l'affichage
  */
