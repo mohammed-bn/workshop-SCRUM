@@ -14,7 +14,15 @@ let storyIdCounter = 1;
  * - Appeler updateAssigneeSelect() pour mettre à jour le select d'assignation
  */
 function addCollaborator() {
-  // À IMPLÉMENTER
+
+    const valeurInput = document.getElementById('collaboratorName');
+    
+    if(valeurInput.value === "" || collaborators.includes(valeurInput.value)) return;
+ 
+    collaborators.push(valeurInput.value);
+
+    updateCollaboratorsList();
+    updateAssigneeSelect();
 }
 
 /**
