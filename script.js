@@ -14,15 +14,16 @@ let storyIdCounter = 1;
  * - Appeler updateAssigneeSelect() pour mettre à jour le select d'assignation
  */
 function addCollaborator() {
+  const valeurInput = document.getElementById("collaboratorName");
 
-    const valeurInput = document.getElementById('collaboratorName');
-    
-    if(valeurInput.value === "" || collaborators.includes(valeurInput.value)) return;
- 
-    collaborators.push(valeurInput.value);
+  if (valeurInput.value === "" || collaborators.includes(valeurInput.value))
+    return;
 
-    updateCollaboratorsList();
-    updateAssigneeSelect();
+  collaborators.push(valeurInput.value);
+  valeurInput.value = "";
+
+  updateCollaboratorsList();
+  updateAssigneeSelect();
 }
 
 /**
@@ -53,7 +54,14 @@ function updateCollaboratorsList() {
  * - Mettre à jour le select avec innerHTML
  */
 function updateAssigneeSelect() {
-  // À IMPLÉMENTER
+  function updateAssigneeSelect() {
+    const assigne = document.getElementById("storyAssignee");
+    collaborators.forEach((element) => {
+      const optionn = document.createElement("option");
+      assigne.appendChild(optionn);
+      optionn.innerHTML = element;
+    });
+  }
 }
 
 /**
@@ -68,7 +76,18 @@ function updateAssigneeSelect() {
  * - Appeler renderSprintBacklog() pour actualiser l'affichage
  */
 function addUserStory() {
-  // À IMPLÉMENTER
+  const storyTitle = document.getElementById("storyTitle");
+  const storyDescription = document.getElementById("storyDescription");
+
+  if (storyTitle.value === "" || userStories.includes(storyTitle.value)) return;
+
+  let stories = {
+    title: storyTitle.value,
+    descreption: storyDescription.value,
+  };
+
+  userStories.push(stories);
+  console.log(userStories);
 }
 
 /**
