@@ -1,4 +1,4 @@
-let collaborators = ["Abdellah", "Khalid", "Mohamed","said","hello"];
+let collaborators = [];
 let userStories = [];
 let boardStories = [];
 let storyIdCounter = 1;
@@ -35,10 +35,11 @@ function addCollaborator() {
  */
 function updateCollaboratorsList() {
   const collaboratorsList = document.getElementById("collaboratorsList");
-  
+
   collaborators.forEach((value) => {
     const span = document.createElement("span");
     collaboratorsList.appendChild(span);
+    collaboratorsList.style = `display:flex; flex-wrap:wrap; gap:0.2rem;`;
     span.style = `background: #667eea; color: white; padding: 8px 15px; border-radius: 20px;`;
     span.innerHTML = value;
   });
