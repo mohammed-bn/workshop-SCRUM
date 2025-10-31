@@ -55,8 +55,8 @@ function updateCollaboratorsList() {
  */
 function updateAssigneeSelect() {
   const assigne = document.getElementById("storyAssignee");
+  const optionn = document.createElement("option");
   collaborators.forEach((element) => {
-    const optionn = document.createElement("option");
     assigne.appendChild(optionn);
     optionn.innerHTML = element;
   });
