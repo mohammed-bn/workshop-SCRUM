@@ -1,11 +1,11 @@
-let collaborators = [];
+let collaborators = ["Abdellah", "Khalid", "Mohamed","said","hello"];
 let userStories = [];
 let boardStories = [];
 let storyIdCounter = 1;
 
 /**
  * Fonction pour ajouter un nouveau collaborateur à l'équipe
- * TODO: 
+ * TODO:
  * - Récupérer la valeur du champ input avec l'id 'collaboratorName'
  * - Vérifier que le nom n'est pas vide et n'existe pas déjà dans le tableau 'collaborators'
  * - Ajouter le collaborateur au tableau 'collaborators'
@@ -34,7 +34,14 @@ function addCollaborator() {
  * - Injecter le HTML dans l'élément avec innerHTML
  */
 function updateCollaboratorsList() {
-    // À IMPLÉMENTER
+  const collaboratorsList = document.getElementById("collaboratorsList");
+  
+  collaborators.forEach((value) => {
+    const span = document.createElement("span");
+    collaboratorsList.appendChild(span);
+    span.style = `background: #667eea; color: white; padding: 8px 15px; border-radius: 20px;`;
+    span.innerHTML = value;
+  });
 }
 
 /**
@@ -45,7 +52,7 @@ function updateCollaboratorsList() {
  * - Mettre à jour le select avec innerHTML
  */
 function updateAssigneeSelect() {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 /**
@@ -60,7 +67,7 @@ function updateAssigneeSelect() {
  * - Appeler renderSprintBacklog() pour actualiser l'affichage
  */
 function addUserStory() {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 /**
@@ -75,7 +82,7 @@ function addUserStory() {
  * - Injecter tout le HTML généré dans le conteneur
  */
 function renderSprintBacklog() {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 /**
@@ -89,7 +96,7 @@ function renderSprintBacklog() {
  * - Appeler renderSprintBacklog() et renderBoard() pour mettre à jour l'affichage
  */
 function startSprint(sprintNum) {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 /**
@@ -105,7 +112,7 @@ function startSprint(sprintNum) {
  *   - Injecter le HTML dans le conteneur
  */
 function renderBoard() {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 /**
@@ -115,7 +122,7 @@ function renderBoard() {
  * - Retourner le status suivant selon le status actuel
  */
 function getNextStatus(current) {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 /**
@@ -125,7 +132,7 @@ function getNextStatus(current) {
  * - Retourner le status précédent selon le status actuel
  */
 function getPrevStatus(current) {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 /**
@@ -136,7 +143,7 @@ function getPrevStatus(current) {
  * - Appeler renderBoard() pour actualiser l'affichage
  */
 function moveCard(id, newStatus) {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 /**
@@ -146,7 +153,7 @@ function moveCard(id, newStatus) {
  * - Appeler renderBoard() pour actualiser l'affichage
  */
 function deleteCard(id) {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 // Initialisation
