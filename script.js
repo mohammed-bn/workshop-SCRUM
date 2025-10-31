@@ -1,11 +1,11 @@
-let collaborators = ["said", "mohamed", "anas", "najib","walid"];
+let collaborators = [];
 let userStories = [];
 let boardStories = [];
 let storyIdCounter = 1;
 
 /**
  * Fonction pour ajouter un nouveau collaborateur à l'équipe
- * TODO: 
+ * TODO:
  * - Récupérer la valeur du champ input avec l'id 'collaboratorName'
  * - Vérifier que le nom n'est pas vide et n'existe pas déjà dans le tableau 'collaborators'
  * - Ajouter le collaborateur au tableau 'collaborators'
@@ -14,7 +14,16 @@ let storyIdCounter = 1;
  * - Appeler updateAssigneeSelect() pour mettre à jour le select d'assignation
  */
 function addCollaborator() {
-    // À IMPLÉMENTER
+  const valeurInput = document.getElementById("collaboratorName");
+
+  if (valeurInput.value === "" || collaborators.includes(valeurInput.value))
+    return;
+
+  collaborators.push(valeurInput.value);
+  valeurInput.value = "";
+
+  updateCollaboratorsList();
+  updateAssigneeSelect();
 }
 
 /**
@@ -26,7 +35,15 @@ function addCollaborator() {
  * - Injecter le HTML dans l'élément avec innerHTML
  */
 function updateCollaboratorsList() {
-    // À IMPLÉMENTER
+  const collaboratorsList = document.getElementById("collaboratorsList");
+
+  const span = document.createElement("span");
+  collaborators.forEach((value) => {
+    collaboratorsList.appendChild(span);
+    collaboratorsList.style = `display:flex; flex-wrap:wrap; gap:0.2rem;`;
+    span.style = `background: #667eea; color: white; padding: 8px 15px; border-radius: 20px;`;
+    span.innerHTML = value;
+  });
 }
 
 /**
@@ -37,12 +54,12 @@ function updateCollaboratorsList() {
  * - Mettre à jour le select avec innerHTML
  */
 function updateAssigneeSelect() {
-    const assigne = document.getElementById("storyAssignee");
-    collaborators.forEach(element => {
-        const optionn = document.createElement("option");
-        assigne.appendChild(optionn);
-        optionn.innerHTML=(element);
-    });
+  const assigne = document.getElementById("storyAssignee");
+  collaborators.forEach((element) => {
+    const optionn = document.createElement("option");
+    assigne.appendChild(optionn);
+    optionn.innerHTML = element;
+  });
 }
 updateAssigneeSelect();
 /**
@@ -56,7 +73,18 @@ updateAssigneeSelect();
  * - Appeler renderSprintBacklog() pour actualiser l'affichage
  */
 function addUserStory() {
-    // À IMPLÉMENTER
+  const storyTitle = document.getElementById("storyTitle");
+  const storyDescription = document.getElementById("storyDescription");
+
+  if (storyTitle.value === "" || userStories.includes(storyTitle.value)) return;
+
+  let stories = {
+    title: storyTitle.value,
+    descreption: storyDescription.value,
+  };
+
+  userStories.push(stories);
+  console.log(userStories);
 }
 
 /**
@@ -71,7 +99,7 @@ function addUserStory() {
  * - Injecter tout le HTML généré dans le conteneur
  */
 function renderSprintBacklog() {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 /**
@@ -85,7 +113,7 @@ function renderSprintBacklog() {
  * - Appeler renderSprintBacklog() et renderBoard() pour mettre à jour l'affichage
  */
 function startSprint(sprintNum) {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 /**
@@ -101,7 +129,7 @@ function startSprint(sprintNum) {
  *   - Injecter le HTML dans le conteneur
  */
 function renderBoard() {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 /**
@@ -111,7 +139,7 @@ function renderBoard() {
  * - Retourner le status suivant selon le status actuel
  */
 function getNextStatus(current) {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 /**
@@ -121,7 +149,7 @@ function getNextStatus(current) {
  * - Retourner le status précédent selon le status actuel
  */
 function getPrevStatus(current) {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 /**
@@ -132,7 +160,7 @@ function getPrevStatus(current) {
  * - Appeler renderBoard() pour actualiser l'affichage
  */
 function moveCard(id, newStatus) {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 /**
@@ -142,7 +170,7 @@ function moveCard(id, newStatus) {
  * - Appeler renderBoard() pour actualiser l'affichage
  */
 function deleteCard(id) {
-    // À IMPLÉMENTER
+  // À IMPLÉMENTER
 }
 
 // Initialisation
